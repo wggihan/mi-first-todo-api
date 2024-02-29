@@ -2,9 +2,7 @@
 <api context="/work" name="FirstToDoAPI" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET" uri-template="/todo">
         <inSequence>
-            <log level="custom">
-                <property expression="get-property('system',&quot;ServiceURL&quot;)" name="URL"/>
-            </log>
+            <property action="remove" name="Accept-Encoding" scope="transport"/>
             <call>
                 <endpoint>
                     <http method="get" uri-template="$SYSTEM:ServiceURL">
