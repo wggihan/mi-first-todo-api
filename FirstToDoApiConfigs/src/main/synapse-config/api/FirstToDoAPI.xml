@@ -4,7 +4,7 @@
         <inSequence>
             <call>
                 <endpoint>
-                    <http method="get" uri-template="https://jsonplaceholder.typicode.com/todos">
+                    <http method="get" uri-template="$SYSTEM:ServiceURL">
                         <suspendOnFailure>
                             <initialDuration>-1</initialDuration>
                             <progressionFactor>-1</progressionFactor>
