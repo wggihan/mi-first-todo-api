@@ -2,6 +2,9 @@
 <api context="/work" name="FirstToDoAPI" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET" uri-template="/todo">
         <inSequence>
+            <log level="custom">
+                <property expression="get-property('system',&quot;serviceURL&quot;)" name="URL"/>
+            </log>
             <call>
                 <endpoint>
                     <http method="get" uri-template="$SYSTEM:ServiceURL">
@@ -16,7 +19,6 @@
                     </http>
                 </endpoint>
             </call>
-            
             <payloadFactory media-type="json">
                 <format>$1</format>
                 <args>
