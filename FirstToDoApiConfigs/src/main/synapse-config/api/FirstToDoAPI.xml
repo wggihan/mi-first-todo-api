@@ -16,6 +16,9 @@
                     </http>
                 </endpoint>
             </call>
+            <log level="custom">
+                <property expression="$SYSTEM:ServiceURL" name="URL"/>
+            </log>
             <payloadFactory media-type="json">
                 <format>$1</format>
                 <args>
