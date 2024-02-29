@@ -2,9 +2,6 @@
 <api context="/work" name="FirstToDoAPI" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET" uri-template="/todo">
         <inSequence>
-        <log level="custom">
-                <property expression="$SYSTEM:ServiceURL" name="URL"/>
-            </log>
             <call>
                 <endpoint>
                     <http method="get" uri-template="$SYSTEM:ServiceURL">
