@@ -3,7 +3,7 @@
     <resource methods="GET" uri-template="/todo">
         <inSequence>
             <log level="custom">
-                <property expression="get-property('system',&quot;serviceURL&quot;)" name="URL"/>
+                <property expression="get-property('system',&quot;ServiceURL&quot;)" name="URL"/>
             </log>
             <call>
                 <endpoint>
